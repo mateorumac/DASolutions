@@ -14,38 +14,99 @@
   .hero-carousel {
     position: relative;
     overflow: hidden;
-    height: 400px;
-    background-color: #f7f7f7;
-  }
-  
-  .carousel-item {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transition: opacity 1s ease-in-out;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .carousel-item img {
     width: 100%;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .hero-search-container {
+    position: absolute;
+    bottom: 10%;
+    width: 90%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+  
+  .search-field {
+    flex: 1 1 22%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .search-field label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .search-field input,
+  .search-field select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .search-field input::placeholder {
+    color: #aaa;
+  }
+  
+  .search-button {
+    flex: 1 1 100%;
+    padding: 0.75rem;
+    background-color: #007bff; 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3; 
   }
   
   .carousel-caption {
     position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 1rem;
-    border-radius: 5px;
+    bottom: 30%;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   }
   
   .carousel-caption h3 {
-    margin: 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
   }
+  
+  .carousel-caption p {
+    font-size: 1.2rem;
+  }
+  
   
 /* Explore Listings Section */
 .card-container {
@@ -87,17 +148,16 @@
   }
   
   .card-content h3 {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
   }
   
   .card-content p {
-    margin: 0.75rem 0;
+    margin: 0.5rem 0;
     font-size: 1rem;
-    line-height: 1.5;
-    color: #666;
+    display: flex;
+    align-items: center;
   }
   
   .card-content .btn {
@@ -114,7 +174,145 @@
   .card-content .btn:hover {
     background-color: #0056b3;
   }
+
+  /* Carousel */
+  .carousel {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+  }
   
+  .carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 2;
+    padding: 0.5rem;
+  }
+  
+  .carousel-btn.prev {
+    left: 10px;
+  }
+  
+  .carousel-btn.next {
+    right: 10px;
+  }
+  
+  .carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+  }
+  
+  .indicator {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .indicator.active {
+    background-color: white;
+  }
+  
+  /* Icons */
+  .icon {
+    color: #007bff; 
+    font-size: 1.2rem;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  
+  .icon-heart {
+    font-size: 1.5rem;
+    color: #ff4d4d; 
+    transition: color 0.3s ease;
+  }
+  
+  .icon-heart:hover {
+    color: #e60000; 
+  }
+  
+  .heart-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+/* Best Places to Visit Section */
+.best-places-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 0; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+  }
+  
+  .best-place-card {
+    width: 280px; 
+    height: 400px; 
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+  }
+  
+  .best-place-card:nth-child(2n) {
+    margin-top: 80px; /* Stagger every 2nd image lower */
+  }
+  
+  .best-place-content {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #FFD700;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+  }
+  
+  .best-place-content h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  
+  .best-place-content p {
+    margin: 0.5rem 0 0;
+    font-size: 1.1rem;
+  }
+  
+  .best-places-text {
+    max-width: 800px;
+    margin: 0 auto 2rem auto; 
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+  }
   
   /* Featured Listings Section */
   .featured-listings .card-container {

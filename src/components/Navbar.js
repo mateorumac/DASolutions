@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import { FaGlobe } from "react-icons/fa";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const [languageDropdown, setLanguageDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setLanguageDropdown(!languageDropdown);
+  };
+
   return (
     <header className="navbar">
       <div className="navbar-container">
@@ -19,6 +26,31 @@ const Navbar = () => {
           <a href="/submit-property" className="highlighted">
             Submit Property
           </a>
+          <div className="language-dropdown">
+            <button
+              className="language-button"
+              onClick={toggleDropdown}
+              aria-expanded={languageDropdown}
+            >
+              <FaGlobe className="globe-icon" />
+            </button>
+            {languageDropdown && (
+              <ul className="dropdown-menu">
+                <li>
+                  <a href="#HRV">HRV</a>
+                </li>
+                <li>
+                  <a href="#ENG">ENG</a>
+                </li>
+                <li>
+                  <a href="#DEU">DEU</a>
+                </li>
+                <li>
+                  <a href="#ITA">ITA</a>
+                </li>
+              </ul>
+            )}
+          </div>
         </nav>
       </div>
     </header>
