@@ -1,5 +1,6 @@
 import React from "react";
 import "./HomePage.css";
+import { FaPhone, FaHome, FaCamera, FaClipboardList, FaUsers, FaChartLine } from "react-icons/fa";
 
 const HomePage = () => {
   const listings = [
@@ -176,55 +177,60 @@ const HomePage = () => {
           ))}
         </div>
       </div>
-
-      {/* How It Works Section */}
-      <div className="how-it-works section">
-        <h2>How It Works</h2>
-        <div className="steps-container">
-          <div className="step">
-            <h3>Contact Us</h3>
-            <p>
-              Contacting us gives you the opportunity to learn more about our
-              company and experience our collaborative working culture.
-            </p>
-          </div>
-          <div className="step">
-            <h3>Set Up Properties</h3>
-            <p>
-              We collaborate to design and optimize the space to ensure it
-              provides the highest comfort and appeal for guests.
-            </p>
-          </div>
-          <div className="step">
-            <h3>Creating Professional Photos</h3>
-            <p>
-              Professional photos are taken to showcase its best features,
-              attracting more guests and maximizing its value.
-            </p>
-          </div>
-          <div className="step">
-            <h3>Publish Your Listing</h3>
-            <p>
-              Your listing will be published on our website and distributed to
-              major OTAs, including Booking.com, Airbnb, Expedia, and others.
-            </p>
-          </div>
-          <div className="step">
-            <h3>Get Reservations</h3>
-            <p>
-              Guests are provided, allowing you to track and monitor your
-              initial reservations.
-            </p>
-          </div>
-          <div className="step">
-            <h3>Build a Successful Business</h3>
-            <p>
-              You can relax and monitor reports while we ensure a high return
-              on your real estate investments.
-            </p>
-          </div>
-        </div>
-      </div>
+{/* How It Works Section */}
+<div className="how-it-works section">
+  <h2>How It Works</h2>
+  <div className="steps-container">
+    <div className="step">
+      <FaPhone className="step-icon" />
+      <h3>Contact Us</h3>
+      <p>
+        Contacting us gives you the opportunity to learn more about our
+        company and experience our collaborative working culture.
+      </p>
+    </div>
+    <div className="step">
+      <FaHome className="step-icon" />
+      <h3>Set Up Properties</h3>
+      <p>
+        We collaborate to design and optimize the space to ensure it
+        provides the highest comfort and appeal for guests.
+      </p>
+    </div>
+    <div className="step">
+      <FaCamera className="step-icon" />
+      <h3>Creating Professional Photos</h3>
+      <p>
+        Professional photos are taken to showcase its best features,
+        attracting more guests and maximizing its value.
+      </p>
+    </div>
+    <div className="step">
+      <FaClipboardList className="step-icon" />
+      <h3>Publish Your Listing</h3>
+      <p>
+        Your listing will be published on our website and distributed to
+        major OTAs, including Booking.com, Airbnb, Expedia, and others.
+      </p>
+    </div>
+    <div className="step">
+      <FaUsers className="step-icon" />
+      <h3>Get Reservations</h3>
+      <p>
+        Guests are provided, allowing you to track and monitor your
+        initial reservations.
+      </p>
+    </div>
+    <div className="step">
+      <FaChartLine className="step-icon" />
+      <h3>Build a Successful Business</h3>
+      <p>
+        You can relax and monitor reports while we ensure a high return
+        on your real estate investments.
+      </p>
+    </div>
+  </div>
+</div>
 
       {/* Owner Testimonials Section */}
       <div className="owner-testimonials section">
