@@ -3,9 +3,8 @@ import "./HeroCarousel.css";
 
 const HeroCarousel = ({ listings }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [direction, setDirection] = useState(""); // 'left' or 'right'
 
-  // Automatically change slides every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
@@ -15,45 +14,42 @@ const HeroCarousel = ({ listings }) => {
   }, [currentIndex]);
 
   const handlePrevious = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? listings.length - 1 : prevIndex - 1
-      );
-      setIsTransitioning(false);
-    }, 500);
+    setDirection("left");
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? listings.length - 1 : prevIndex - 1
+    );
   };
 
   const handleNext = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === listings.length - 1 ? 0 : prevIndex + 1
-      );
-      setIsTransitioning(false);
-    }, 500);
+    setDirection("right");
+    setCurrentIndex((prevIndex) =>
+      prevIndex === listings.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
     <div className="hero-carousel-container">
-      <div
-        className={`carousel-image ${
-          isTransitioning ? "carousel-transition" : ""
-        }`}
-        style={{
-          backgroundImage: `url(${listings[currentIndex].image})`,
-        }}
-      >
-        <div className="carousel-overlay">
-          <div className="carousel-details">
-            <h2>{listings[currentIndex].title}</h2>
-            <p>{listings[currentIndex].location}</p>
-            <p className="price">{listings[currentIndex].price}/night</p>
-            <button className="view-details-btn">View Details</button>
+      <div className={`carousel-wrapper ${direction}`}>
+        {listings.map((listing, index) => (
+          <div
+            key={index}
+            className={`carousel-item ${
+              index === currentIndex ? "active" : ""
+            }`}
+            style={{
+              backgroundImage: `url(${listing.image})`,
+            }}
+          >
+            <div className="carousel-overlay">
+              <div className="carousel-details">
+                <h2>{listing.title}</h2>
+                <p>{listing.location}</p>
+                <p className="price">{listing.price}/night</p>
+                <button className="view-details-btn">View Details</button>
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
         <button className="carousel-control prev" onClick={handlePrevious}>
           &#8249;
         </button>
