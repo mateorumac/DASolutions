@@ -1,25 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./HeroCarousel.css";
 
 const HeroCarousel = ({ listings }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  // Automatically change slides every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
 
   const handlePrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? listings.length - 1 : prevIndex - 1
-    );
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? listings.length - 1 : prevIndex - 1
+      );
+      setIsTransitioning(false);
+    }, 500);
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === listings.length - 1 ? 0 : prevIndex + 1
-    );
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === listings.length - 1 ? 0 : prevIndex + 1
+      );
+      setIsTransitioning(false);
+    }, 500);
   };
 
   return (
     <div className="hero-carousel-container">
       <div
-        className="carousel-image"
+        className={`carousel-image ${
+          isTransitioning ? "carousel-transition" : ""
+        }`}
         style={{
           backgroundImage: `url(${listings[currentIndex].image})`,
         }}
