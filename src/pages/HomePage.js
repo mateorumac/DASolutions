@@ -1,24 +1,18 @@
 import React, { useState } from "react";
+import HeroCarousel from "../components/HeroCarousel.js";
 import "./HomePage.css";
-import {
-  FaPhone,
-  FaHome,
-  FaCamera,
-  FaClipboardList,
-  FaUsers,
-  FaChartLine,
-  FaTag,
-  FaMapMarkerAlt,
-  FaHeart,
-  FaStar, 
-  FaClipboardCheck, 
-  FaShieldAlt
-} from "react-icons/fa";
+import {FaPhone, FaHome, FaCamera, FaClipboardList, FaUsers, FaChartLine, FaTag, FaMapMarkerAlt, FaHeart, FaStar,  FaClipboardCheck, FaShieldAlt} from "react-icons/fa";
 import zagrebImg from "../assets/homepage/zagreb.webp";
 import splitImg from "../assets/homepage/Split.webp";
 import bracImg from "../assets/homepage/Brac.webp";
 import visImg from "../assets/homepage/Vis.webp";
 import coastImage from "../assets/homepage/coast.jpg";
+import Plavi from "../assets/homepage/plavi.jpg";
+import Zeleni from "../assets/homepage/zeleni.jpg";
+import Bijeli from "../assets/homepage/bijeli.jpg";
+import zgcosy from "../assets/homepage/zgcosy.jpg";
+import zgzeleni from "../assets/homepage/zgzeleni.jpg";
+import zgljub from "../assets/homepage/zgljub.jpg";
 import profile1 from "../assets/testimonials/james.jpg"
 import profile2 from "../assets/testimonials/sarah.jpg"
 import profile3 from "../assets/testimonials/michaela.jpg"
@@ -32,11 +26,10 @@ const HomePage = () => {
       [cardIndex]: (prev[cardIndex] || 0) + direction,
     }));
   };
-
   const listings = [
     {
       id: 1,
-      image: "/images/listing1.jpg",
+      image: Plavi,
       title: "Mali Raj Komiza – Blue Apartment",
       price: "€200",
       location: "Komiza, Vis",
@@ -44,7 +37,7 @@ const HomePage = () => {
     },
     {
       id: 2,
-      image: "/images/listing2.jpg",
+      image: Zeleni,
       title: "Mali Raj Komiza – Green Apartment",
       price: "€220",
       location: "Komiza, Vis",
@@ -52,7 +45,7 @@ const HomePage = () => {
     },
     {
       id: 3,
-      image: "/images/listing3.jpg",
+      image: Bijeli,
       title: "Mali Raj Komiza – White Apartment",
       price: "€250",
       location: "Komiza, Vis",
@@ -60,7 +53,7 @@ const HomePage = () => {
     },
     {
       id: 4,
-      image: "/images/listing4.jpg",
+      image: zgcosy,
       title: "Cozy Apartment on a Main Square",
       price: "€80",
       location: "Downtown, Zagreb",
@@ -68,7 +61,7 @@ const HomePage = () => {
     },
     {
       id: 5,
-      image: "/images/listing5.jpg",
+      image: zgzeleni,
       title: "Green Apartment on a Main Square",
       price: "€80",
       location: "Downtown, Zagreb",
@@ -76,7 +69,7 @@ const HomePage = () => {
     },
     {
       id: 6,
-      image: "/images/listing6.jpg",
+      image: zgljub,
       title: "Purple Apartment on a Main Square",
       price: "€100",
       location: "Downtown, Zagreb",
@@ -141,50 +134,56 @@ const HomePage = () => {
   return (
     <main className="homepage">
 <section className="hero-carousel">
-  {listings.map((listing, index) => (
-    <article key={index} className="carousel-item">
-      <img src={listing.image} alt={listing.title} />
-      <div className="carousel-caption">
-        <h3>{listing.title}</h3>
-        <p>{listing.location}</p>
-      </div>
-    </article>
-  ))}
+<HeroCarousel listings={listings}/>
 
-  <div className="hero-search-container">
-    <form className="search-form">
-      <div className="search-field">
-        <label htmlFor="location">Where</label>
-        <input
-          type="text"
-          id="location"
-          name="location"
-          placeholder="Enter location"
-        />
-      </div>
-      <div className="search-field">
-        <label htmlFor="arrival">Arrival</label>
-        <input type="date" id="arrival" name="arrival" />
-      </div>
-      <div className="search-field">
-        <label htmlFor="departure">Departure</label>
-        <input type="date" id="departure" name="departure" />
-      </div>
-      <div className="search-field">
-        <label htmlFor="guests">Guests</label>
-        <select id="guests" name="guests">
-          <option value="1">1 Guest</option>
-          <option value="2">2 Guests</option>
-          <option value="3">3 Guests</option>
-          <option value="4">4 Guests</option>
-          <option value="5+">5+ Guests</option>
-        </select>
-      </div>
-      <button type="submit" className="search-button">
-        Search
-      </button>
-    </form>
-  </div>
+<div className="hero-search-container">
+  <form className="search-form">
+    <div className="search-field">
+      <input
+        type="text"
+        id="location"
+        name="location"
+        placeholder="Where"
+      />
+    </div>
+    <div className="search-field">
+      <input
+        type="text"
+        id="arrival"
+        name="arrival"
+        placeholder="Arrival"
+        onFocus={(e) => (e.target.type = "date")}
+        onBlur={(e) => (e.target.type = "text")}
+      />
+    </div>
+    <div className="search-field">
+      <input
+        type="text"
+        id="departure"
+        name="departure"
+        placeholder="Departure"
+        onFocus={(e) => (e.target.type = "date")}
+        onBlur={(e) => (e.target.type = "text")}
+      />
+    </div>
+    <div className="search-field">
+      <select id="guests" name="guests">
+        <option value="" disabled selected>
+          Guests
+        </option>
+        <option value="1">1 Guest</option>
+        <option value="2">2 Guests</option>
+        <option value="3">3 Guests</option>
+        <option value="4">4 Guests</option>
+        <option value="5+">5+ Guests</option>
+      </select>
+    </div>
+    <button type="submit" className="search-button">
+      Search
+    </button>
+  </form>
+</div>
+
 </section>
 
       <section className="explore-listings section">
