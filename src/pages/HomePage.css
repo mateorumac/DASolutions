@@ -107,6 +107,18 @@ h2 {
 }
 
 /* Explore Listings Section */
+.explore-listings h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
+
+.explore-listings h2 span {
+  color: #007bff;
+}
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -267,6 +279,29 @@ h2 {
   margin: 0 auto; 
 }
 
+.best-places h2 {
+  font-family: 'Playfair Display', serif; 
+  font-size: 3.5rem; 
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 5rem;
+}
+
+.best-places h2 span {
+  color: #007bff; 
+}
+
+.best-places .best-places-text p {
+  font-family: 'Open Sans', sans-serif; 
+  font-size: 1.5rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 800px; 
+  margin: 0 auto 1.5rem; 
+  margin-bottom: 4rem;
+}
 .best-place-card {
   width: 280px; 
   height: 400px; 
@@ -286,7 +321,7 @@ h2 {
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
-  color: #FFD700;
+  color: #f0f0f0;
   padding: 0.5rem 1rem;
   text-align: center;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
@@ -313,6 +348,19 @@ h2 {
 }
 
 /* Featured Listings Section */
+.featured-listings h2 {
+  font-family: 'Playfair Display', serif; 
+  font-size: 3.5rem; 
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 5rem;
+}
+
+.featured-listings h2 span {
+  color: #007bff; 
+}
+
 .featured-listings .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -530,34 +578,87 @@ h2 {
 }
 
 /* Owner Testimonials Section */
-.owner-testimonials .testimonial-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.testimonial-card {
-  width: 300px;
-  background: #f8f9fa;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.owner-testimonials {
+  padding: 4rem 2rem;
   text-align: center;
 }
 
-.testimonial-card h3 {
-  margin-top: 1rem;
+.owner-testimonials h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.owner-testimonials h2 span {
+  color: #007bff;
+}
+.testimonial-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.testimonial-card {
+  width: 350px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card .profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-card .profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-card .profile-details {
+  text-align: left;
+}
+
+.testimonial-card .profile-details h3 {
+  margin: 0;
   font-size: 1.25rem;
+  font-weight: bold;
   color: #333;
 }
 
-.testimonial-card h4 {
-  margin-bottom: 1rem;
+.testimonial-card .profile-details h4 {
+  margin: 0;
   font-size: 1rem;
-  color: #777;
+  color: #007bff;
 }
+
+.testimonial-card .rating {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  color: #ffd700;
+}
+
+.testimonial-card .comment {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
 
 /* Call-to-Action Hero Section */
 .cta-hero {

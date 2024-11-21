@@ -19,9 +19,9 @@ import splitImg from "../assets/homepage/Split.webp";
 import bracImg from "../assets/homepage/Brac.webp";
 import visImg from "../assets/homepage/Vis.webp";
 import coastImage from "../assets/homepage/coast.jpg";
-import ctaImage from "../assets/homepage/ocean.webp";
-
-
+import profile1 from "../assets/testimonials/james.jpg"
+import profile2 from "../assets/testimonials/sarah.jpg"
+import profile3 from "../assets/testimonials/michaela.jpg"
 
 const HomePage = () => {
   const [carouselIndex, setCarouselIndex] = useState({});
@@ -118,6 +118,7 @@ const HomePage = () => {
       message:
         "Working with D&A Real Estate has been a game changer for my investments. Their transparency gives me complete confidence.",
       rating: 5,
+      image: profile1,
     },
     {
       name: "Sarah L.",
@@ -125,6 +126,7 @@ const HomePage = () => {
       message:
         "They handle everything from cleaning to facility management with great attention to detail. Highly recommended!",
       rating: 5,
+      image: profile2,
     },
     {
       name: "Michaela R.",
@@ -132,6 +134,7 @@ const HomePage = () => {
       message:
         "Their expertise drives higher returns for investors. I feel supported every step of the way.",
       rating: 5,
+      image: profile3,
     },
   ];
 
@@ -184,9 +187,8 @@ const HomePage = () => {
   </div>
 </section>
 
-
       <section className="explore-listings section">
-        <h2>Explore Our Listings</h2>
+        <h2>Explore Our <span>Listings</span></h2>
         <div className="card-container">
           {listings.map((listing, index) => (
             <article key={index} className="card">
@@ -234,14 +236,16 @@ const HomePage = () => {
       </section>
 
       <section className="best-places section">
-        <h2>Best Places To Visit</h2>
+      <h2>
+        Best <span>Places</span> To Visit
+      </h2>
         <div className="best-places-text">
           <p>
             What is your next destination? <br />
             We know it’s not easy to choose just one location, since Croatia is equally
             as beautiful wherever you look.
-          </p>
-          <p>That is why we have narrowed it down to the most popular regions.</p>
+          
+          That is why we have narrowed it down to the most popular regions.</p>
         </div>
         <div className="best-places-container">
           {bestPlaces.map((place) => (
@@ -260,7 +264,7 @@ const HomePage = () => {
       </section>
 
       <section className="featured-listings section">
-        <h2>Featured Properties</h2>
+        <h2>Featured <span>Properties</span></h2>
         <div className="card-container">
           {listings.slice(0, 3).map((listing, index) => (
             <article key={index} className="card">
@@ -408,19 +412,24 @@ const HomePage = () => {
     </div>
   </div>
 </section>
-      <section className="owner-testimonials section">
-        <h2>Owner Testimonials</h2>
-        <div className="testimonial-container">
-          {testimonials.map((testimonial, index) => (
-            <article key={index} className="testimonial-card">
-              <p>{testimonial.message}</p>
-              <h3>{testimonial.name}</h3>
-              <h4>{testimonial.role}</h4>
-              <p>{'⭐'.repeat(testimonial.rating)}</p>
-            </article>
-          ))}
+<section className="owner-testimonials section">
+  <h2>Owner <span>Testimonials</span></h2>
+  <div className="testimonial-container">
+    {testimonials.map((testimonial, index) => (
+      <article key={index} className="testimonial-card">
+        <div className="profile">
+          <img src={testimonial.image} alt={testimonial.name} />
+          <div className="profile-details">
+            <h3>{testimonial.name}</h3>
+            <h4>{testimonial.role}</h4>
+          </div>
         </div>
-      </section>
+        <div className="rating">{'⭐'.repeat(testimonial.rating)}</div>
+        <p className="comment">{testimonial.message}</p>
+      </article>
+    ))}
+  </div>
+</section>
 
       <section
   className="cta-hero"
