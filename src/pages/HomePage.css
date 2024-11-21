@@ -351,7 +351,7 @@ h2 {
 
 /* Secondary Hero Section */
 .secondary-hero {
-  background: url('/src/assets/homepage/coast.webp') no-repeat center center / cover;
+  background: url('/src/assets/homepage/ocean.webp') no-repeat center center / cover;
   padding: 6rem 2rem;
   position: relative;
   display: flex;
@@ -410,7 +410,7 @@ h2 {
 
 .feature-icon {
   font-size: 3rem;
-  color: #007bff; 
+  color: #ffd700; 
   margin-bottom: 1rem;
 }
 
@@ -438,37 +438,71 @@ h2 {
   color: #ffd700;
 }
 
-/* How It Works Section */
+/* Rent with Us Section */
 .how-it-works {
-  text-align: center;
-  padding: 2rem 1rem;
-  background-color: #f8f9fa;
+  padding: 4rem 2rem;
   max-width: 1150px;
   margin: 0 auto;
 }
 
-.how-it-works h2 {
+.how-it-works-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+.how-it-works-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.how-it-works-header span {
+  color: #007bff; 
+}
+
+/* Subheader to the Left */
+.how-it-works-subheader {
+  text-align: left;
+  margin-bottom: 2rem;
+  margin-top: 7rem;
+}
+
+.how-it-works-subheader h3 {
+  font-family: 'Playfair Display', serif;
   font-size: 2rem;
   color: #333;
-  margin-bottom: 2rem;
-  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.how-it-works-subheader p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 400px;
 }
 
 .steps-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  justify-items: center;
+  width: 100%;
 }
 
 .step {
-  width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .step:hover {
@@ -483,16 +517,15 @@ h2 {
 }
 
 .step h3 {
-  margin-bottom: 0.75rem;
   font-size: 1.25rem;
   font-weight: bold;
   color: #333;
+  margin-bottom: 0.75rem;
 }
 
 .step p {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.4;
+  font-size: 1rem;
+  line-height: 1.5;
   color: #555;
 }
 

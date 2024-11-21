@@ -18,7 +18,7 @@ import zagrebImg from "../assets/homepage/zagreb.webp";
 import splitImg from "../assets/homepage/Split.webp";
 import bracImg from "../assets/homepage/Brac.webp";
 import visImg from "../assets/homepage/Vis.webp";
-import coastImage from "../assets/homepage/coast.webp";
+import coastImage from "../assets/homepage/coast.jpg";
 import ctaImage from "../assets/homepage/ocean.webp";
 
 
@@ -340,61 +340,74 @@ const HomePage = () => {
     </div>
   </div>
 </section>
+<section className="how-it-works section">
+  <div className="how-it-works-header">
+    <h2>
+      <span>Rent</span> with Us
+    </h2>
+  </div>
 
-      <section className="how-it-works section">
-        <h2>How It Works</h2>
-        <div className="steps-container">
-          <article className="step">
-            <FaPhone className="step-icon" />
-            <h3>Contact Us</h3>
-            <p>
-              Contacting us gives you the opportunity to learn more about our company
-              and experience our collaborative working culture.
-            </p>
-          </article>
-          <article className="step">
-            <FaHome className="step-icon" />
-            <h3>Set Up Properties</h3>
-            <p>
-              We collaborate to design and optimize the space to ensure it provides the
-              highest comfort and appeal for guests.
-            </p>
-          </article>
-          <article className="step">
-            <FaCamera className="step-icon" />
-            <h3>Creating Professional Photos</h3>
-            <p>
-              Professional photos are taken to showcase its best features, attracting
-              more guests and maximizing its value.
-            </p>
-          </article>
-          <article className="step">
-            <FaClipboardList className="step-icon" />
-            <h3>Publish Your Listing</h3>
-            <p>
-              Your listing will be published on our website and distributed to major
-              OTAs, including Booking.com, Airbnb, Expedia, and others.
-            </p>
-          </article>
-          <article className="step">
-            <FaUsers className="step-icon" />
-            <h3>Get Reservations</h3>
-            <p>
-              Guests are provided, allowing you to track and monitor your initial
-              reservations.
-            </p>
-          </article>
-          <article className="step">
-            <FaChartLine className="step-icon" />
-            <h3>Build a Successful Business</h3>
-            <p>
-              You can relax and monitor reports while we ensure a high return on your
-              real estate investments.
-            </p>
-          </article>
-        </div>
-      </section>
+  <div className="how-it-works-content">
+    <div className="how-it-works-subheader">
+      <h3>How It Works</h3>
+      <p>
+        Learn how our streamlined process ensures you get the most out of your
+        real estate with ease and professionalism.
+      </p>
+    </div>
 
+    <div className="steps-container">
+      <article className="step">
+        <FaPhone className="step-icon" />
+        <h3>Contact Us</h3>
+        <p>
+          Contacting us gives you the opportunity to learn more about our
+          company and experience our collaborative working culture.
+        </p>
+      </article>
+      <article className="step">
+        <FaHome className="step-icon" />
+        <h3>Set Up Properties</h3>
+        <p>
+          We collaborate to design and optimize the space to ensure it provides
+          the highest comfort and appeal for guests.
+        </p>
+      </article>
+      <article className="step">
+        <FaCamera className="step-icon" />
+        <h3>Creating Professional Photos</h3>
+        <p>
+          Professional photos are taken to showcase its best features,
+          attracting more guests and maximizing its value.
+        </p>
+      </article>
+      <article className="step">
+        <FaClipboardList className="step-icon" />
+        <h3>Publish Your Listing</h3>
+        <p>
+          Your listing will be published on our website and distributed to
+          major OTAs, including Booking.com, Airbnb, Expedia, and others.
+        </p>
+      </article>
+      <article className="step">
+        <FaUsers className="step-icon" />
+        <h3>Get Reservations</h3>
+        <p>
+          Guests are provided, allowing you to track and monitor your initial
+          reservations.
+        </p>
+      </article>
+      <article className="step">
+        <FaChartLine className="step-icon" />
+        <h3>Build a Successful Business</h3>
+        <p>
+          You can relax and monitor reports while we ensure a high return on
+          your real estate investments.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
       <section className="owner-testimonials section">
         <h2>Owner Testimonials</h2>
         <div className="testimonial-container">
@@ -412,7 +425,7 @@ const HomePage = () => {
       <section
   className="cta-hero"
   style={{
-    background: `url(${ctaImage}) no-repeat center center / cover`,
+    background: `url(${coastImage}) no-repeat center center / cover`,
   }}
 >
   <div className="cta-hero-content">
