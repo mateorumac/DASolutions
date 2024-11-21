@@ -109,7 +109,7 @@ const HomePage = () => {
       name: "James T.",
       role: "Happy Owner",
       message:
-        "Working with D&A Real Estate has been a game changer for my investments. Their transparency gives me complete confidence.",
+        "Working with D&A Real Estate has been a game-changer for my investments. Their transparency in operations and reporting gives me complete confidence. I can easily monitor the performance of my properties, knowing they are being managed efficiently and effectively. I can finally invest without worries!",
       rating: 5,
       image: profile1,
     },
@@ -117,7 +117,7 @@ const HomePage = () => {
       name: "Sarah L.",
       role: "Happy Owner",
       message:
-        "They handle everything from cleaning to facility management with great attention to detail. Highly recommended!",
+        "I couldn't be happier with the level of care D&A Real Estate provides for my property. They handle everything, from cleaning to facility management, with great attention to detail. It’s reassuring to know that my investment is in such capable hands, ensuring a clean and welcoming environment for guests.",
       rating: 5,
       image: profile2,
     },
@@ -125,7 +125,7 @@ const HomePage = () => {
       name: "Michaela R.",
       role: "Happy Client",
       message:
-        "Their expertise drives higher returns for investors. I feel supported every step of the way.",
+        "D&A Real Estate truly understands how to maximize profits for property owners. Their focus on effective management and maintenance not only enhances the guest experience but also drives higher returns for investors. I feel supported every step of the way!",
       rating: 5,
       image: profile3,
     },
