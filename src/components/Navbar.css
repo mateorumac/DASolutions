@@ -17,6 +17,17 @@
   margin: 0 auto;
 }
 
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.navbar-logo img {
+  height: 50px; 
+  width: auto;
+}
+
 .navbar-brand {
   font-size: 1.5rem;
   font-weight: bold;
