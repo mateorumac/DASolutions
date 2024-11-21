@@ -15,7 +15,6 @@
   justify-content: space-between;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1rem;
 }
 
 .navbar-brand {
@@ -75,6 +74,7 @@
   color: #fff;
 }
 
+/* Language Dropdown */
 .language-dropdown {
   position: relative;
 }
@@ -83,30 +83,31 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #555;
   font-size: 1.5rem;
-}
-
-.language-button:hover .globe-icon {
-  color: #007bff;
 }
 
 .globe-icon {
   color: #555;
 }
 
+.globe-icon:hover {
+  color: #007bff;
+}
+
 .dropdown-menu {
+  display: block;
   position: absolute;
-  top: 100%;
+  top: 120%; 
   right: 0;
   background: #fff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  border-radius: 8px;
   overflow: hidden;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0.5rem 0;
   z-index: 1000;
+  min-width: 150px;
 }
 
 .dropdown-menu li {
@@ -116,10 +117,19 @@
 .dropdown-menu li a {
   text-decoration: none;
   color: #333;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .dropdown-menu li a:hover {
   background-color: #f0f0f0;
   color: #007bff;
+}
+
+/* Flag Icon Styling */
+.flag-icon {
+  width: 20px;
+  height: 14px;
+  border-radius: 3px;
 }

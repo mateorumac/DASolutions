@@ -10,11 +10,18 @@ import {
   FaTag,
   FaMapMarkerAlt,
   FaHeart,
+  FaStar, 
+  FaClipboardCheck, 
+  FaShieldAlt
 } from "react-icons/fa";
-import zagrebImg from "../assets/homepage/zagreb.jpg";
-import splitImg from "../assets/homepage/Split.jpeg";
-import bracImg from "../assets/homepage/Brac.jpg";
-import visImg from "../assets/homepage/Vis.jpg";
+import zagrebImg from "../assets/homepage/zagreb.webp";
+import splitImg from "../assets/homepage/Split.webp";
+import bracImg from "../assets/homepage/Brac.webp";
+import visImg from "../assets/homepage/Vis.webp";
+import coastImage from "../assets/homepage/coast.webp";
+import ctaImage from "../assets/homepage/ocean.webp";
+
+
 
 const HomePage = () => {
   const [carouselIndex, setCarouselIndex] = useState({});
@@ -299,6 +306,40 @@ const HomePage = () => {
           ))}
         </div>
       </section>
+      
+      <section class="headline-section">
+  <h2 class="hero-headline">
+    Experience the <span>Best</span> with Us
+  </h2>
+  <p className="opis">Your dream vacation starts here.</p>
+</section>
+
+<section class="secondary-hero">
+  <div class="hero-content">
+    <h1>Enjoy the Adriatic Coast</h1>
+    <p>Rich properties, rave reviews, and secure stays for a perfect experience.</p>
+    <div class="features">
+      <div class="feature">
+        <FaStar className="feature-icon" />
+        <h3>The Highest Quality Standards</h3>
+        <p>We focus on rich and high-quality properties, delivering the best across the Adriatic.</p>
+      </div>
+      <div class="feature">
+        <FaClipboardCheck className="feature-icon" />
+        <h3>Rave Reviews</h3>
+        <p>Discover properties highly rated by satisfied guests, with scores that speak for themselves.</p>
+      </div>
+      <div class="feature">
+        <FaShieldAlt className="feature-icon" />
+        <h3>Secure Stays</h3>
+        <p>Enjoy peace of mind with comprehensive guest and property insurance included in every stay.</p>
+      </div>
+    </div>
+    <div class="footer-question">
+      <span>Have you already chosen your accommodation?</span>
+    </div>
+  </div>
+</section>
 
       <section className="how-it-works section">
         <h2>How It Works</h2>
@@ -367,6 +408,22 @@ const HomePage = () => {
           ))}
         </div>
       </section>
+
+      <section
+  className="cta-hero"
+  style={{
+    background: `url(${ctaImage}) no-repeat center center / cover`,
+  }}
+>
+  <div className="cta-hero-content">
+    <h1>Rent your real estate with us</h1>
+    <p>
+      Partner with us to maximize your rental income and leave all the hard work
+      to our professional team.
+    </p>
+    <button className="cta-button">Join Us</button>
+  </div>
+</section>
     </main>
   );
 };

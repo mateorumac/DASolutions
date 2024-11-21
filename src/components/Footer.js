@@ -1,4 +1,5 @@
 import React from "react";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa"; // Import social media icons
 import "./Footer.css";
 
 const Footer = () => {
@@ -6,7 +7,6 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-columns">
-          {/* About Section */}
           <div className="footer-column">
             <h4>About D&A Real Estate</h4>
             <p>
@@ -15,8 +15,6 @@ const Footer = () => {
               market of accommodation booking.
             </p>
           </div>
-
-          {/* Contact Section */}
           <div className="footer-column">
             <h4>Contact</h4>
             <p>Sokolska Ulica 35</p>
@@ -24,24 +22,20 @@ const Footer = () => {
             <p>info@daanda.hr</p>
             <p>D&A Real Estate</p>
           </div>
-
-          {/* Social Links Section */}
           <div className="footer-column">
             <h4>Social Links</h4>
             <div className="social-links">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                Facebook
+                <FaFacebook className="social-icon" /> Facebook
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                Instagram
+                <FaInstagram className="social-icon" /> Instagram
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                Twitter
+                <FaTwitter className="social-icon" /> Twitter
               </a>
             </div>
           </div>
-
-          {/* Featured Listings */}
           <div className="footer-column">
             <h4>Featured Listings</h4>
             <ul className="featured-listings">
@@ -51,8 +45,6 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
-        {/* Currency Selector */}
         <div className="footer-bottom">
           <div className="currency-selector">
             <label htmlFor="currency">Change Currency:</label>
@@ -68,5 +60,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;
