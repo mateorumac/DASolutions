@@ -16,14 +16,19 @@ const HomePage = () => {
   const [carouselIndex, setCarouselIndex] = useState({});
 
   const handleCarousel = (cardIndex, direction) => {
-    setCarouselIndex((prev) => ({
-      ...prev,
-      [cardIndex]:
-        ((prev[cardIndex] || 0) + direction + listings[cardIndex].images.length) %
-        listings[cardIndex].images.length,
-    }));
+    setCarouselIndex((prev) => {
+      const currentIndex = prev[cardIndex] || 0;
+      const newIndex =
+        (currentIndex + direction + listings[cardIndex].images.length) %
+        listings[cardIndex].images.length;
+  
+      return {
+        ...prev,
+        [cardIndex]: newIndex,
+      };
+    });
   };
-
+  
   const testimonials = [
     {
       name: "James T.",
@@ -53,142 +58,123 @@ const HomePage = () => {
 
   return (
     <main className="homepage">
-<section className="hero-carousel">
-<HeroCarousel listings={listings}/>
+      <section className="hero-carousel">
+        <HeroCarousel listings={listings} />
 
-<div className="hero-search-container">
-  <form className="search-form">
-    <div className="search-field">
-      <input
-        type="text"
-        id="location"
-        name="location"
-        placeholder="Where"
-      />
-    </div>
-    <div className="search-field">
-      <input
-        type="text"
-        id="arrival"
-        name="arrival"
-        placeholder="Arrival"
-        onFocus={(e) => (e.target.type = "date")}
-        onBlur={(e) => (e.target.type = "text")}
-      />
-    </div>
-    <div className="search-field">
-      <input
-        type="text"
-        id="departure"
-        name="departure"
-        placeholder="Departure"
-        onFocus={(e) => (e.target.type = "date")}
-        onBlur={(e) => (e.target.type = "text")}
-      />
-    </div>
-    <div className="search-field">
-      <select id="guests" name="guests">
-        <option value="" disabled selected>
-          Guests
-        </option>
-        <option value="1">1 Guest</option>
-        <option value="2">2 Guests</option>
-        <option value="3">3 Guests</option>
-        <option value="4">4 Guests</option>
-        <option value="5+">5+ Guests</option>
-      </select>
-    </div>
-    <button type="submit" className="search-button">
-      Search
-    </button>
-  </form>
-</div>
-
-</section>
-
-<section className="explore-listings section">
-  <h2>
-    Explore Our <span>Listings</span>
-  </h2>
-  <div className="card-container">
-    {listings.map((listing, index) => (
-      <article key={index} className="card">
-        <div className="carousel">
-          {listing.images ? (
-            // Multi-image carousel
-            <>
-              <button
-                className="carousel-btn prev"
-                onClick={() => handleCarousel(index, -1)}
-              >
-                &lt;
-              </button>
-              <img
-                src={
-                  listing.images[
-                    (carouselIndex[index] || 0) % listing.images.length
-                  ]
-                }
-                alt={`${listing.title}`}
-                className="carousel-image"
+        <div className="hero-search-container">
+          <form className="search-form">
+            <div className="search-field">
+              <input type="text" id="location" name="location" placeholder="Where" />
+            </div>
+            <div className="search-field">
+              <input
+                type="text"
+                id="arrival"
+                name="arrival"
+                placeholder="Arrival"
+                onFocus={(e) => (e.target.type = "date")}
+                onBlur={(e) => (e.target.type = "text")}
               />
-              <button
-                className="carousel-btn next"
-                onClick={() => handleCarousel(index, 1)}
-              >
-                &gt;
-              </button>
-              <div className="carousel-indicators">
-  {listing.images.map((_, i) => (
-    <span
-      key={i}
-      className={`indicator ${
-        i === (carouselIndex[index] || 0) % listing.images.length ? "active" : ""
-      }`}
-      onClick={() =>
-        setCarouselIndex((prev) => ({
-          ...prev,
-          [index]: i,
-        }))
-      }
-    ></span>
-  ))}
-</div>
-
-
-            </>
-          ) : (
-            // Single image
-            <img
-              src={listing.image}
-              alt={listing.title}
-              className="carousel-image"
-            />
-          )}
+            </div>
+            <div className="search-field">
+              <input
+                type="text"
+                id="departure"
+                name="departure"
+                placeholder="Departure"
+                onFocus={(e) => (e.target.type = "date")}
+                onBlur={(e) => (e.target.type = "text")}
+              />
+            </div>
+            <div className="search-field">
+              <select id="guests" name="guests">
+                <option value="" disabled selected>
+                  Guests
+                </option>
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5+">5+ Guests</option>
+              </select>
+            </div>
+            <button type="submit" className="search-button">
+              Search
+            </button>
+          </form>
         </div>
-        <div className="card-content">
-          <h3>{listing.title}</h3>
-          <p>
-            <FaTag className="icon" /> {listing.price}/night
-          </p>
-          <p>
-            <FaMapMarkerAlt className="icon" /> {listing.location}
-          </p>
-          <p>
-            <FaHome className="icon" /> {listing.type}
-          </p>
-          <button className="heart-btn">
-            <FaHeart className="icon-heart" />
-          </button>
-          <a href={`/listings/${listing.id}`} className="btn">
-            View Details
-          </a>
-        </div>
-      </article>
-    ))}
-  </div>
-</section>
+      </section>
 
+      <section className="explore-listings section">
+        <h2>
+          Explore Our <span>Listings</span>
+        </h2>
+        <div className="card-container">
+          {listings.map((listing, index) => (
+            <article key={index} className="card">
+              <div className="carousel">
+                <button
+                  className="carousel-btn prev"
+                  onClick={() => handleCarousel(index, -1)}
+                >
+                  &lt;
+                </button>
+                <img
+                  src={
+                    listing.images[
+                      (carouselIndex[index] || 0) % listing.images.length
+                    ]
+                  }
+                  alt={`${listing.title}`}
+                  className="carousel-image"
+                />
+                <button
+                  className="carousel-btn next"
+                  onClick={() => handleCarousel(index, 1)}
+                >
+                  &gt;
+                </button>
+                <div className="carousel-indicators">
+                  {listing.images.map((_, i) => (
+                    <span
+                      key={i}
+                      className={`indicator ${
+                        i === (carouselIndex[index] || 0) % listing.images.length
+                          ? "active"
+                          : ""
+                      }`}
+                      onClick={() =>
+                        setCarouselIndex((prev) => ({
+                          ...prev,
+                          [index]: i,
+                        }))
+                      }
+                    ></span>
+                  ))}
+                </div>
+              </div>
+              <div className="card-content">
+                <h3>{listing.title}</h3>
+                <p>
+                  <FaTag className="icon" /> {listing.price}/night
+                </p>
+                <p>
+                  <FaMapMarkerAlt className="icon" /> {listing.location}
+                </p>
+                <p>
+                  <FaHome className="icon" /> {listing.type}
+                </p>
+                <button className="heart-btn">
+                  <FaHeart className="icon-heart" />
+                </button>
+                <a href={`/listings/${listing.id}`} className="btn">
+                  View Details
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section className="best-places section">
       <h2>
@@ -219,53 +205,71 @@ const HomePage = () => {
       </section>
 
       <section className="featured-listings section">
-        <h2>Featured <span>Properties</span></h2>
-        <div className="card-container">
-          {listings.slice(0, 3).map((listing, index) => (
-            <article key={index} className="card">
-              <div className="carousel">
-                <button
-                  className="carousel-btn prev"
-                  onClick={() => handleCarousel(index, -1)}
-                >
-                  &lt;
-                </button>
-                <img src={listing.image} alt={listing.title} className="carousel-image" />
-                <button
-                  className="carousel-btn next"
-                  onClick={() => handleCarousel(index, 1)}
-                >
-                  &gt;
-                </button>
-                <div className="carousel-indicators">
-                  <span className="indicator active"></span>
-                  <span className="indicator"></span>
-                  <span className="indicator"></span>
-                </div>
-              </div>
-              <div className="card-content">
-                <h3>{listing.title}</h3>
-                <p>
-                  <FaTag className="icon" /> {listing.price}/night
-                </p>
-                <p>
-                  <FaMapMarkerAlt className="icon" /> {listing.location}
-                </p>
-                <p>
-                  <FaHome className="icon" /> {listing.type}
-                </p>
-                <button className="heart-btn">
-                  <FaHeart className="icon-heart" />
-                </button>
-                <a href={`/listings/${listing.id}`} className="btn">
-                  View Details
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-      
+  <h2>Featured <span>Properties</span></h2>
+  <div className="card-container">
+    {listings
+      .filter((listing) => listing.id === 5 || listing.id === 6) // Filter only Green and Purple Apartments
+      .map((listing, index) => (
+        <article key={index} className="card">
+          <div className="carousel">
+            <div className="featured-banner">Featured</div> {/* Add the banner */}
+            <button
+              className="carousel-btn prev"
+              onClick={() => handleCarousel(index, -1)}
+            >
+              &lt;
+            </button>
+            <img
+              src={listing.images[0]} // Display the first image by default
+              alt={listing.title}
+              className="carousel-image"
+            />
+            <button
+              className="carousel-btn next"
+              onClick={() => handleCarousel(index, 1)}
+            >
+              &gt;
+            </button>
+            <div className="carousel-indicators">
+              {listing.images.map((_, i) => (
+                <span
+                  key={i}
+                  className={`indicator ${
+                    i === (carouselIndex[index] || 0) ? "active" : ""
+                  }`}
+                  onClick={() =>
+                    setCarouselIndex((prev) => ({
+                      ...prev,
+                      [index]: i,
+                    }))
+                  }
+                ></span>
+              ))}
+            </div>
+          </div>
+          <div className="card-content">
+            <h3>{listing.title}</h3>
+            <p>
+              <FaTag className="icon" /> {listing.price}/night
+            </p>
+            <p>
+              <FaMapMarkerAlt className="icon" /> {listing.location}
+            </p>
+            <p>
+              <FaHome className="icon" /> {listing.type}
+            </p>
+            <button className="heart-btn">
+              <FaHeart className="icon-heart" />
+            </button>
+            <a href={`/listings/${listing.id}`} className="btn">
+              View Details
+            </a>
+          </div>
+        </article>
+      ))}
+  </div>
+</section>
+
       <section class="headline-section">
   <h2 class="hero-headline">
     Experience the <span>Best</span> with Us
