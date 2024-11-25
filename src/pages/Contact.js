@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import HeroCarousel from "../components/HeroCarousel";
 import "./Contact.css";
-import Plavi from "../assets/homepage/plavi.jpg";
-import Zeleni from "../assets/homepage/zeleni.jpg";
-import Bijeli from "../assets/homepage/bijeli.jpg";
-import zgcosy from "../assets/homepage/zgcosy.jpg";
-import zgzeleni from "../assets/homepage/zgzeleni.jpg";
-import zgljub from "../assets/homepage/zgljub.jpg";
+import Plavi from "../assets/homepage/plavi.webp";
+import Zeleni from "../assets/homepage/zeleni.webp";
+import Bijeli from "../assets/homepage/bijeli.webp";
+import zgcosy from "../assets/homepage/zgcosy.webp";
+import zgzeleni from "../assets/homepage/zgzeleni.webp";
+import zgljub from "../assets/homepage/zgljub.webp";
 
 const ContactPage = () => {
   const [carouselIndex, setCarouselIndex] = useState(0);

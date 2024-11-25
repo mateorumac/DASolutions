@@ -7,15 +7,15 @@ import splitImg from "../assets/homepage/Split.webp";
 import bracImg from "../assets/homepage/Brac.webp";
 import visImg from "../assets/homepage/Vis.webp";
 import coastImage from "../assets/homepage/coast.jpg";
-import Plavi from "../assets/homepage/plavi.jpg";
-import Zeleni from "../assets/homepage/zeleni.jpg";
-import Bijeli from "../assets/homepage/bijeli.jpg";
-import zgcosy from "../assets/homepage/zgcosy.jpg";
-import zgzeleni from "../assets/homepage/zgzeleni.jpg";
-import zgljub from "../assets/homepage/zgljub.jpg";
-import profile1 from "../assets/testimonials/james.jpg"
-import profile2 from "../assets/testimonials/sarah.jpg"
-import profile3 from "../assets/testimonials/michaela.jpg"
+import Plavi from "../assets/homepage/plavi.webp";
+import Zeleni from "../assets/homepage/zeleni.webp";
+import Bijeli from "../assets/homepage/bijeli.webp";
+import zgcosy from "../assets/homepage/zgcosy.webp";
+import zgzeleni from "../assets/homepage/zgzeleni.webp";
+import zgljub from "../assets/homepage/zgljub.webp";
+import profile1 from "../assets/testimonials/james.webp"
+import profile2 from "../assets/testimonials/sarah.webp"
+import profile3 from "../assets/testimonials/michaela.webp"
 
 const HomePage = () => {
   const [carouselIndex, setCarouselIndex] = useState({});

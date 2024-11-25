@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaGlobe } from "react-icons/fa";
 import "./Navbar.css";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 
 const Navbar = () => {
   const [languageDropdown, setLanguageDropdown] = useState(false);
