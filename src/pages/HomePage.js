@@ -1,21 +1,16 @@
 import React, { useState } from "react";
 import HeroCarousel from "../components/HeroCarousel.js";
 import "./HomePage.css";
-import {FaPhone, FaHome, FaCamera, FaClipboardList, FaUsers, FaChartLine, FaTag, FaMapMarkerAlt, FaHeart, FaStar,  FaClipboardCheck, FaShieldAlt} from "react-icons/fa";
-import zagrebImg from "../assets/homepage/zagreb.webp";
-import splitImg from "../assets/homepage/Split.webp";
-import bracImg from "../assets/homepage/Brac.webp";
-import visImg from "../assets/homepage/Vis.webp";
+import { 
+  FaPhone, FaHome, FaCamera, FaClipboardList, FaUsers, FaChartLine, FaTag, 
+  FaMapMarkerAlt, FaHeart, FaStar, FaClipboardCheck, FaShieldAlt 
+} from "react-icons/fa";
+import listings from "../data/listings";
+import bestPlaces from "../data/bestPlaces";
 import coastImage from "../assets/homepage/coast.jpg";
-import Plavi from "../assets/homepage/plavi.webp";
-import Zeleni from "../assets/homepage/zeleni.webp";
-import Bijeli from "../assets/homepage/bijeli.webp";
-import zgcosy from "../assets/homepage/zgcosy.webp";
-import zgzeleni from "../assets/homepage/zgzeleni.webp";
-import zgljub from "../assets/homepage/zgljub.webp";
-import profile1 from "../assets/testimonials/james.webp"
-import profile2 from "../assets/testimonials/sarah.webp"
-import profile3 from "../assets/testimonials/michaela.webp"
+import profile1 from "../assets/testimonials/james.webp";
+import profile2 from "../assets/testimonials/sarah.webp";
+import profile3 from "../assets/testimonials/michaela.webp";
 
 const HomePage = () => {
   const [carouselIndex, setCarouselIndex] = useState({});
@@ -26,83 +21,6 @@ const HomePage = () => {
       [cardIndex]: (prev[cardIndex] || 0) + direction,
     }));
   };
-  const listings = [
-    {
-      id: 1,
-      image: Plavi,
-      title: "Mali Raj Komiza – Blue Apartment",
-      price: "€200",
-      location: "Komiza, Vis",
-      type: "Apartment / Private Room",
-    },
-    {
-      id: 2,
-      image: Zeleni,
-      title: "Mali Raj Komiza – Green Apartment",
-      price: "€220",
-      location: "Komiza, Vis",
-      type: "Apartment / Private Room",
-    },
-    {
-      id: 3,
-      image: Bijeli,
-      title: "Mali Raj Komiza – White Apartment",
-      price: "€250",
-      location: "Komiza, Vis",
-      type: "Apartment / Private Room",
-    },
-    {
-      id: 4,
-      image: zgcosy,
-      title: "Cozy Apartment on a Main Square",
-      price: "€80",
-      location: "Downtown, Zagreb",
-      type: "Studio / Entire Home",
-    },
-    {
-      id: 5,
-      image: zgzeleni,
-      title: "Green Apartment on a Main Square",
-      price: "€80",
-      location: "Downtown, Zagreb",
-      type: "Apartment / Entire Home",
-    },
-    {
-      id: 6,
-      image: zgljub,
-      title: "Purple Apartment on a Main Square",
-      price: "€100",
-      location: "Downtown, Zagreb",
-      type: "Studio / Entire Home",
-    },
-  ];
-
-  const bestPlaces = [
-    {
-      id: 1,
-      image: zagrebImg,
-      title: "Zagreb",
-      listings: "9 Listings",
-    },
-    {
-      id: 2,
-      image: splitImg,
-      title: "Split",
-      listings: "0 Listings",
-    },
-    {
-      id: 3,
-      image: bracImg,
-      title: "Brac",
-      listings: "5 Listings",
-    },
-    {
-      id: 4,
-      image: visImg,
-      title: "Vis",
-      listings: "3 Listings",
-    },
-  ];
 
   const testimonials = [
     {
