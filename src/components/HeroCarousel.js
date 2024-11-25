@@ -37,7 +37,9 @@ const HeroCarousel = ({ listings }) => {
               index === currentIndex ? "active" : ""
             }`}
             style={{
-              backgroundImage: `url(${listing.image})`,
+              backgroundImage: `url(${
+                listing.images ? listing.images[0] : listing.image
+              })`,
             }}
           >
             <div className="carousel-overlay">
